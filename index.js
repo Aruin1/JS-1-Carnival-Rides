@@ -11,21 +11,29 @@ let waterIsOn = true
 
 //Ride 1 works when:
     // green wire is connected
-ride1PowerOn = false
+if (greenWireConnected)  {
+    ride1PowerOn = true
+} else {ride1PowerOn = false}
 
 //Ride 2 works when 
     //green and yellow wires are connected
-ride2PowerOn = false
+if (greenWireConnected & yellowWireConnected) {
+    ride2PowerOn = true
+} else {ride2PowerOn = false}
 
 //Ride 3 works when:
     // green and red wires are connected
     // water is on 
     // yellow wire is not connected
-ride3PowerOn = false
+if (greenWireConnected & redWireConnected & waterIsOn & !yellowWireConnected) {
+    ride3PowerOn = true
+} else {ride3PowerOn = false}
 
 //Ride 4 has power when:
-    //ride wire is connected
-ride4PowerOn = false
+    //ride wire is connected (going to assume "ride wire" is a typo for "red wire")
+if (redWireConnected) {
+    ride4PowerOn = true
+} else{ ride4PowerOn = false }
 //Ride 4 is a slot machine
     //if a 1 is rolled it should return "star"
     //if a 2 is rolled it should return "car"
